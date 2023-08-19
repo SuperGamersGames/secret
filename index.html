@@ -24,12 +24,24 @@
     <p>
         Happy 18th Birthday, Justice!
     </p>
-    
+    <audio id="song">
+        <source src="playminigame.mp3" type="audio/mp3" />
+     </audio>
+
     <script>
         var start = Date.now();
+
+        var audioElement = document.getElementById('song');
+        audioElement.setAttribute("preload", "auto");
+        audioElement.autobuffer = true;    
+        audioElement.load();
+        
+
         setInterval(function() {
             var delta = Date.now() - start; // milliseconds elapsed since start
             
+            audioElement.play();
+
             console.log(Math.floor(delta / 1000)); // in seconds
             document.getElementById("p1").innerHTML = "You have been waiting for "+String(Math.floor(delta / 1000)+" seconds for a page to load that isn't actually loading. 😜");
         }, 1000); // update about every second
