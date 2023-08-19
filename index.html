@@ -1,3 +1,38 @@
+<!DOCTYPE html>
+<html>
 <head>
-    hi
+    <meta charset="UTF-8" />
+    <title>It's a Secret</title>
 </head>
+<body style="display: flex; min-width: 100%; max-width: 100%; flex-direction: column; align-items: center; text-align: center;">
+    <h1 style="text-align: center; margin-top: 5em; font-size: 10em;">
+        Loading...
+    </h1>
+    <p style="text-align: center; margin-top: 80em; font-size: 2em;" id="p1">
+        You have been waiting for 0 seconds for a page to load that isn't actually loading. 😜
+    </p>
+    <p style="text-align: center; margin-top: 80em; font-size: 2em;">
+        I can't believe I managed to make you wait that long.
+    </p>
+    <p style="text-align: center; margin-top: 80em; font-size: 2em;">
+        At least it's not as long as you will have to wait for...
+    </p>
+    <img src="ICS.gif" style="display: flex; max-width: 100%; margin-top: 160em; margin-bottom: 50em;">
+    <p>
+        Disclaimer: It may be later than that but hopefully not. 🙄
+    </p>
+    <p>
+        Happy 18th Birthday, Justice!
+    </p>
+    
+    <script>
+        var start = Date.now();
+        setInterval(function() {
+            var delta = Date.now() - start; // milliseconds elapsed since start
+            
+            console.log(Math.floor(delta / 1000)); // in seconds
+            document.getElementById("p1").innerHTML = "You have been waiting for "+String(Math.floor(delta / 1000)+" seconds for a page to load that isn't actually loading. 😜");
+        }, 1000); // update about every second
+    </script>
+</body>
+</html>
